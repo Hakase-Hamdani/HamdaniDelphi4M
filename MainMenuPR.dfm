@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 7
-  Top = 175
-  Width = 928
+  Left = 208
+  Top = 159
+  Width = 929
   Height = 480
   Caption = 'Form1'
   Color = clBtnFace
@@ -29,9 +29,11 @@ object Form1: TForm1
       end
       object Latihan02Kondisional1: TMenuItem
         Caption = 'Latihan 02 Kondisional'
+        OnClick = Latihan02Kondisional1Click
       end
       object ugasMandiri2Kondisional1: TMenuItem
         Caption = 'Tugas Mandiri 2 Kondisional'
+        OnClick = ugasMandiri2Kondisional1Click
       end
       object ChartdanStringGrid11: TMenuItem
         Caption = 'Chart dan StringGrid 1'

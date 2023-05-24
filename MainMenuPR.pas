@@ -21,6 +21,8 @@ type
     Modul4Final1: TMenuItem;
     procedure Kalkulator1Click(Sender: TObject);
     procedure PraktekMandiri11Click(Sender: TObject);
+    procedure Latihan02Kondisional1Click(Sender: TObject);
+    procedure ugasMandiri2Kondisional1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +35,7 @@ var
 implementation
 
 uses
-  latihan1, PM1;
+  latihan1, PM1, LATIHAN_02_KONDISIONAL_pas, TUGAS_MANDIRI_2_form;
 
 {$R *.dfm}
 
@@ -45,6 +47,16 @@ end;
 procedure TForm1.PraktekMandiri11Click(Sender: TObject);
 begin
 KalkulatorV2.ShowModal;
+end;
+
+procedure TForm1.Latihan02Kondisional1Click(Sender: TObject);
+begin
+Latihan02.ShowModal;
+end;
+
+procedure TForm1.ugasMandiri2Kondisional1Click(Sender: TObject);
+begin
+Tugas2.ShowModal;
 end;
 
 end.
