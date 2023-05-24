@@ -41,9 +41,11 @@ object Form1: TForm1
       end
       object ugasMandiri031: TMenuItem
         Caption = 'Tugas Mandiri 03'
+        OnClick = ugasMandiri031Click
       end
       object ugasMandiri041: TMenuItem
         Caption = 'Tugas Mandiri 04'
+        OnClick = ugasMandiri041Click
       end
     end
     object Modul41: TMenuItem

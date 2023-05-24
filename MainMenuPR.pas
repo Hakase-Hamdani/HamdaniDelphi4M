@@ -24,6 +24,8 @@ type
     procedure Latihan02Kondisional1Click(Sender: TObject);
     procedure ugasMandiri2Kondisional1Click(Sender: TObject);
     procedure ChartdanStringGrid11Click(Sender: TObject);
+    procedure ugasMandiri031Click(Sender: TObject);
+    procedure ugasMandiri041Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +39,7 @@ implementation
 
 uses
   latihan1, PM1, LATIHAN_02_KONDISIONAL_pas, TUGAS_MANDIRI_2_form, 
-  GRAFIK_STRINGGRID_MODUL1_form;
+  GRAFIK_STRINGGRID_MODUL1_form, TUGAS_MANDIRI_03_form, TUGAS_MANDIRI_04_form;
 
 {$R *.dfm}
 
@@ -64,6 +66,16 @@ end;
 procedure TForm1.ChartdanStringGrid11Click(Sender: TObject);
 begin
 GrafikStringGrid.ShowModal;
+end;
+
+procedure TForm1.ugasMandiri031Click(Sender: TObject);
+begin
+Tugas3.ShowModal;
+end;
+
+procedure TForm1.ugasMandiri041Click(Sender: TObject);
+begin
+Tugas4.ShowModal;
 end;
 
 end.
