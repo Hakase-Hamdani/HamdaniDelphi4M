@@ -9,6 +9,17 @@ uses
 type
   TForm1 = class(TForm)
     MainMenu1: TMainMenu;
+    ugas1: TMenuItem;
+    Kalkulator1: TMenuItem;
+    PraktekMandiri11: TMenuItem;
+    Latihan02Kondisional1: TMenuItem;
+    ugasMandiri2Kondisional1: TMenuItem;
+    ChartdanStringGrid11: TMenuItem;
+    ugasMandiri031: TMenuItem;
+    ugasMandiri041: TMenuItem;
+    Modul41: TMenuItem;
+    Modul4Final1: TMenuItem;
+    procedure Kalkulator1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -20,6 +31,14 @@ var
 
 implementation
 
+uses
+  latihan1;
+
 {$R *.dfm}
+
+procedure TForm1.Kalkulator1Click(Sender: TObject);
+begin
+kalkulator.ShowModal;
+end;
 
 end.

@@ -1,0 +1,15 @@
+program MainMenuPRJ;
+
+uses
+  Forms,
+  MainMenuPR in 'MainMenuPR.pas' {Form1},
+  latihan1 in 'kalkulator\latihan1.pas' {kalkulator};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tkalkulator, kalkulator);
+  Application.Run;
+end.
