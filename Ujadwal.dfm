@@ -1,6 +1,6 @@
-object Form9: TForm9
-  Left = 889
-  Top = 306
+object FormTambahData: TFormTambahData
+  Left = 307
+  Top = 50
   Width = 1044
   Height = 640
   Caption = 'FORM TAMBAH JADWAL'
@@ -219,9 +219,9 @@ object Form9: TForm9
       Caption = 'SIMPAN'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -16
+      Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 8
       OnClick = Button1Click
@@ -234,9 +234,9 @@ object Form9: TForm9
       Caption = 'EDIT'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -16
+      Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 9
       OnClick = Button2Click
@@ -249,9 +249,9 @@ object Form9: TForm9
       Caption = 'HAPUS'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -16
+      Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 10
       OnClick = Button3Click
@@ -264,9 +264,9 @@ object Form9: TForm9
       Caption = 'BATAL'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -16
+      Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 11
       OnClick = Button4Click
@@ -277,7 +277,7 @@ object Form9: TForm9
     Top = 312
     Width = 977
     Height = 257
-    DataSource = Form8.ds1
+    DataSource = FormJadwal.ds1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

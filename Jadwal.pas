@@ -8,7 +8,7 @@ uses
   DBGrids, Series, frxClass, frxDBSet;
 
 type
-  TForm8 = class(TForm)
+  TFormJadwal = class(TForm)
     con1: TADOConnection;
     qry1: TADOQuery;
     ds1: TDataSource;
@@ -38,14 +38,14 @@ type
   end;
 
 var
-  Form8: TForm8;
+  FormJadwal: TFormJadwal;
 
 implementation
 uses Ujadwal;
 
 {$R *.dfm}
 
-procedure TForm8.Button1Click(Sender: TObject);
+procedure TFormJadwal.Button1Click(Sender: TObject);
 var i:Integer;
 begin
   qry1.SQL.Clear;
@@ -59,22 +59,14 @@ begin
   dbgrd1.Columns[2].Width:=90;
 end;
 
-procedure TForm8.Button2Click(Sender: TObject);
+procedure TFormJadwal.Button2Click(Sender: TObject);
 begin
   qry1.SQL.Clear;
   qry1.SQL.Add('select * from jadwal_table');
   qry1.Open;
-
-  dbgrd1.Columns[0].Width:=20;
-  dbgrd1.Columns[1].Width:=50;
-  dbgrd1.Columns[2].Width:=50;
-  dbgrd1.Columns[3].Width:=60;
-  dbgrd1.Columns[5].Width:=60;
-  dbgrd1.Columns[6].Width:=110;
-  dbgrd1.Columns[7].Width:=90;
 end;
 
-procedure TForm8.FormShow(Sender: TObject);
+procedure TFormJadwal.FormShow(Sender: TObject);
 begin
   cht1.Title.Text.Add('GRAFIK KEHADIRAN PRAKTIKUM SISWA');
   dbgrd1.Columns[0].Width:=30;
@@ -84,12 +76,12 @@ begin
   dbgrd1.Columns[7].Width:=90;
 end;
 
-procedure TForm8.Button3Click(Sender: TObject);
+procedure TFormJadwal.Button3Click(Sender: TObject);
 begin
 frxjadwal.ShowReport();
 end;
 
-procedure TForm8.frxjadwalClickObject(View: TfrxView;
+procedure TFormJadwal.frxjadwalClickObject(View: TfrxView;
   Button: TMouseButton; Shift: TShiftState; var Modified: Boolean);
 begin
   if View.Name ='Memo7' then
@@ -102,9 +94,9 @@ begin
     end;
 end;
 
-procedure TForm8.Button4Click(Sender: TObject);
+procedure TFormJadwal.Button4Click(Sender: TObject);
 begin
- Form9.ShowModal;
+FormTambahData.ShowModal;
 end;
 
 end.

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 208
-  Top = 159
+  Left = 424
+  Top = 111
   Width = 534
   Height = 286
   Color = clBtnFace
@@ -19,6 +19,7 @@ object Form1: TForm1
     Top = 64
     Width = 465
     Height = 153
+    ReadOnly = True
     TabOrder = 0
   end
   object MainMenu1: TMainMenu
@@ -59,6 +60,7 @@ object Form1: TForm1
       Caption = 'Modul 4'
       object Modul4Final1: TMenuItem
         Caption = 'Modul 4 Final'
+        OnClick = Modul4Final1Click
       end
     end
   end

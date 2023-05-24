@@ -7,7 +7,7 @@ uses
   Dialogs, Grids, DBGrids, StdCtrls, ComCtrls;
 
 type
-  TForm9 = class(TForm)
+  TFormTambahData = class(TForm)
     GrupBox1: TGroupBox;
     dbgrd1: TDBGrid;
     Label1: TLabel;
@@ -32,7 +32,6 @@ type
     Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure bersih;
-    procedure validasi;
     procedure dbgrd1CellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -45,15 +44,15 @@ type
   end;
 
 var
-  Form9: TForm9;
+  FormTambahData: TFormTambahData;
   upd:String;
 
 implementation
-uses Jadwal, MainMenu, ADODB;
+uses Jadwal, ADODB;
 
 {$R *.dfm}
 
-procedure TForm9.bersih;
+procedure TFormTambahData.bersih;
 begin
   Edit1.Text := '00:00';
   Edit2.Text := '00:00';
@@ -76,65 +75,60 @@ begin
   Button3.Enabled := False;
 end;
 
-procedure TForm9.validasi;
+procedure TFormTambahData.Button1Click(Sender: TObject);
+var a:Integer;
 begin
     if (Edit1.Text='') or (Edit1.Text='00:00') or (Edit2.Text='') or (Edit2.Text='00:00')then
       begin
         ShowMessage('DATA BELUM DIISI DENGAN BENAR');
         Exit;
-      end;
+      end else
     if (ComboBox1.Text='') or (ComboBox1.Text='--- PILIH HARI ---')then
       begin
         ShowMessage('HARI BELUM DIISI DENGAN BENAR');
         Exit;
-      end;
+      end else
     if (Edit3.Text='') or (Edit3.Text='-') or (Edit4.Text='') or (Edit4.Text='-')then
       begin
         ShowMessage('INPUT RUANGAN ATAU MATAKULIAH MASIH BELUM SESUAI');
         Exit;
-      end;
+      end else
     if (Edit5.text='') or (Edit5.Text='-') or (Edit6.Text='') or (Edit6.Text='0')then
       begin
         ShowMessage('INPUT KELAS ATAU TOTAL HADIR MASIH BELUM SESUAI');
         Exit;
-      end;
-    if (Form8.qry1.Locate('hari',ComboBox1.Text,[])) and (Form8.qry1.Locate('jam_mulai',Edit1.Text,[])) then // validasi membandingkan data inputan dengan data di table
+      end else
+    if (FormJadwal.qry1.Locate('hari',ComboBox1.Text,[])) and (FormJadwal.qry1.Locate('jam_mulai',Edit1.Text,[])) then // validasi membandingkan data inputan dengan data di table
       begin
         ShowMessage('DATA SUDAH ADA DI DALAM SISTEM');
         Edit1.SetFocus;
         Exit;
-      end;
-end;
-
-procedure TForm9.Button1Click(Sender: TObject);
-var a:Integer;
-begin
-    if validasi then
-    begin  // Kode simpan
-      a:=Form8.qry1.RecordCount+1;
-      with Form8.qry1 do //Kode simpan
-      begin
-        SQL.Clear;
-        SQL.Add('insert into jadwal_table values ("'+inttostr(a)+'","'+Edit1.Text+'","'+Edit2.Text+'","'+ComboBox1.Text+'","'+formatdatetime('yyyy-mm-dd',dtp1.Date)+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'","'+Edit6.Text+'")');
-        ExecSQL;
-        bersih; // procedure bersih
-        ShowMessage('DATA BERHASIL DI SIMPAN');
-      end;
+      end else
+      begin  // Kode simpan
+        a:=FormJadwal.qry1.RecordCount+1;
+        with FormJadwal.qry1 do //Kode simpan
+          begin
+            SQL.Clear;
+            SQL.Add('insert into jadwal_table values ("'+inttostr(a)+'","'+Edit1.Text+'","'+Edit2.Text+'","'+ComboBox1.Text+'","'+formatdatetime('yyyy-mm-dd',dtp1.Date)+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'","'+Edit6.Text+'")');
+            ExecSQL;
+            bersih; // procedure bersih
+            ShowMessage('DATA BERHASIL DI SIMPAN');
+          end;
     end;
 end;
 
-procedure TForm9.dbgrd1CellClick(Column: TColumn);
+procedure TFormTambahData.dbgrd1CellClick(Column: TColumn);
 begin
   try
-    upd:=Form8.qry1.Fields[0].AsString;
-    Edit1.Text:=Form8.qry1.Fields[1].AsString;
-    Edit2.Text:=Form8.qry1.Fields[2].AsString;
-    ComboBox1.Text:=Form8.qry1.Fields[3].AsString;
-    dtp1.Date:=Form8.qry1.Fields[4].AsDateTime;
-    Edit3.Text:=Form8.qry1.Fields[5].AsString;
-    Edit4.Text:=Form8.qry1.Fields[6].AsString;
-    Edit5.Text:=Form8.qry1.Fields[7].AsString;
-    Edit6.Text:=Form8.qry1.Fields[8].AsString;
+    upd:=FormJadwal.qry1.Fields[0].AsString;
+    Edit1.Text:=FormJadwal.qry1.Fields[1].AsString;
+    Edit2.Text:=FormJadwal.qry1.Fields[2].AsString;
+    ComboBox1.Text:=FormJadwal.qry1.Fields[3].AsString;
+    dtp1.Date:=FormJadwal.qry1.Fields[4].AsDateTime;
+    Edit3.Text:=FormJadwal.qry1.Fields[5].AsString;
+    Edit4.Text:=FormJadwal.qry1.Fields[6].AsString;
+    Edit5.Text:=FormJadwal.qry1.Fields[7].AsString;
+    Edit6.Text:=FormJadwal.qry1.Fields[8].AsString;
 
     Button1.Enabled := False;
     Button2.Enabled := True;
@@ -144,12 +138,12 @@ begin
   end;
 end;
 
-procedure TForm9.FormShow(Sender: TObject);
+procedure TFormTambahData.FormShow(Sender: TObject);
 begin
   bersih; //procedure bersih
 end;
 
-procedure TForm9.Button2Click(Sender: TObject);
+procedure TFormTambahData.Button2Click(Sender: TObject);
 begin
     if (Edit1.Text='') or (Edit1.Text='00:00') or (Edit2.Text='') or (Edit2.Text='00:00')then
       begin
@@ -167,14 +161,14 @@ begin
       begin
         ShowMessage('INPUT KELAS ATAU TOTAL HADIR MASIH BELUM SESUAI');
       end else
-    if (Edit1.Text= Form8.qry1.Fields[1].AsString) and (ComboBox1.Text= Form8.qry1.Fields[3].AsString) then //perbandingan dari inputan dan table
+    if (Edit1.Text= FormJadwal.qry1.Fields[1].AsString) and (ComboBox1.Text= FormJadwal.qry1.Fields[3].AsString) then //perbandingan dari inputan dan table
       begin
         ShowMessage('DATA TIDAK ADA PERUBAHAN');
       end else
 
       begin
         //Kode Update
-        with Form8,qry1 do
+        with FormJadwal,qry1 do
           begin
             SQL.Clear;
             SQL.Add('update jadwal_table set jam_mulai="'+Edit1.Text+'",jam_akhir="'+Edit2.Text+'" where no="'+upd+'"');
@@ -185,7 +179,7 @@ begin
       end;
 end;
 
-procedure TForm9.Button3Click(Sender: TObject);
+procedure TFormTambahData.Button3Click(Sender: TObject);
 begin
   if (Edit1.Text='') or (Edit1.Text='00:00') or (Edit2.Text='') or (Edit2.Text='00:00')then
     begin
@@ -208,7 +202,7 @@ begin
       //Kode delete
       if MessageDlg('APAKAH ANDA YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)=mryes then
         begin
-          with Form8.qry1 do
+          with FormJadwal.qry1 do
             begin
               SQL.Clear;
               SQL.Add('delete from jadwal_table where no="'+upd+'"');
@@ -216,14 +210,14 @@ begin
               bersih; //procedure bersih
               ShowMessage('DATA BERHASIL DIHAPUS');
             end;
-        end else
+      end else
         begin
           ShowMessage('DATA BATAL DIHAPUS');
         end;
     end;
 end;
 
-procedure TForm9.Button4Click(Sender: TObject);
+procedure TFormTambahData.Button4Click(Sender: TObject);
 begin
   bersih;
 end;

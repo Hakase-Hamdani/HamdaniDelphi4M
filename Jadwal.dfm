@@ -1,6 +1,6 @@
-object Form8: TForm8
-  Left = 114
-  Top = 73
+object FormJadwal: TFormJadwal
+  Left = 199
+  Top = 82
   Width = 1089
   Height = 638
   Caption = 'DATABASE'
@@ -48,9 +48,9 @@ object Form8: TForm8
     Caption = 'VIEW GRAFIK'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 1
     OnClick = Button1Click
@@ -63,9 +63,9 @@ object Form8: TForm8
     Caption = 'LOAD DATA'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 2
     OnClick = Button2Click
@@ -82,6 +82,58 @@ object Form8: TForm8
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'No'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jam_mulai'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jam_akhir'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'hari'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tanggal'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ruang'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'matkul'
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kelas'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kehadiran_total'
+        Visible = True
+      end>
   end
   object Button3: TButton
     Left = 688
@@ -91,9 +143,9 @@ object Form8: TForm8
     Caption = 'VIEW REPORT'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 4
     OnClick = Button3Click
@@ -106,9 +158,9 @@ object Form8: TForm8
     Caption = 'TAMBAH DATA JADWAL'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 5
     OnClick = Button4Click
@@ -148,14 +200,13 @@ object Form8: TForm8
     Top = 32
   end
   object qry2: TADOQuery
-    Active = True
     Connection = con1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'select * from jadwal_table')
-    Left = 1008
-    Top = 104
+    Left = 184
+    Top = 32
   end
   object frxjadwal: TfrxReport
     Version = '4.12.6'
@@ -166,7 +217,7 @@ object Form8: TForm8
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45066.649232777800000000
-    ReportOptions.LastChange = 45066.673215578700000000
+    ReportOptions.LastChange = 45070.856399733800000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -248,6 +299,7 @@ object Form8: TForm8
           Height = 34.015770000000000000
           ShowHint = False
           TagStr = '[frxDBDataset1."kelas"]'
+          DataField = 'kelas'
           DataSet = frxDBJadwal
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
