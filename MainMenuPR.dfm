@@ -1,9 +1,8 @@
 object Form1: TForm1
   Left = 208
   Top = 159
-  Width = 929
-  Height = 480
-  Caption = 'Form1'
+  Width = 534
+  Height = 286
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,11 +11,19 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Memo1: TMemo
+    Left = 16
+    Top = 64
+    Width = 465
+    Height = 153
+    TabOrder = 0
+  end
   object MainMenu1: TMainMenu
-    Left = 72
-    Top = 32
+    Left = 8
+    Top = 8
     object ugas1: TMenuItem
       Caption = 'Tugas'
       object Kalkulator1: TMenuItem
