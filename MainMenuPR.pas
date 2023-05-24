@@ -20,6 +20,7 @@ type
     Modul41: TMenuItem;
     Modul4Final1: TMenuItem;
     procedure Kalkulator1Click(Sender: TObject);
+    procedure PraktekMandiri11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,13 +33,18 @@ var
 implementation
 
 uses
-  latihan1;
+  latihan1, PM1;
 
 {$R *.dfm}
 
 procedure TForm1.Kalkulator1Click(Sender: TObject);
 begin
 kalkulator.ShowModal;
+end;
+
+procedure TForm1.PraktekMandiri11Click(Sender: TObject);
+begin
+KalkulatorV2.ShowModal;
 end;
 
 end.

@@ -25,6 +25,7 @@ object Form1: TForm1
       end
       object PraktekMandiri11: TMenuItem
         Caption = 'Praktek Mandiri 1'
+        OnClick = PraktekMandiri11Click
       end
       object Latihan02Kondisional1: TMenuItem
         Caption = 'Latihan 02 Kondisional'
