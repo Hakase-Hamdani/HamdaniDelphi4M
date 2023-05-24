@@ -19,7 +19,6 @@ type
     ugasMandiri041: TMenuItem;
     Modul41: TMenuItem;
     Modul4Final1: TMenuItem;
-    Memo1: TMemo;
     procedure Kalkulator1Click(Sender: TObject);
     procedure PraktekMandiri11Click(Sender: TObject);
     procedure Latihan02Kondisional1Click(Sender: TObject);
@@ -27,7 +26,6 @@ type
     procedure ChartdanStringGrid11Click(Sender: TObject);
     procedure ugasMandiri031Click(Sender: TObject);
     procedure ugasMandiri041Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure Modul4Final1Click(Sender: TObject);
   private
     { Private declarations }
@@ -80,13 +78,6 @@ end;
 procedure TForm1.ugasMandiri041Click(Sender: TObject);
 begin
 Tugas4.ShowModal;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-Memo1.Lines.Add('I hate to be that guy, but why Delphi 7? It such an outdated piece of tech, you can''t even replace the name of the unit safely for god sake! It''s only after Delphi 8 this functionality come to existence!');
-Memo1.Lines.Add('');
-Memo1.Lines.Add('This on top of the fact that Lazarus exist, and there''s free version of Delphi 10.4 [DATA REDACTED]');
 end;
 
 procedure TForm1.Modul4Final1Click(Sender: TObject);
