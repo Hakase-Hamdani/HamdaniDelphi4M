@@ -37,6 +37,7 @@ object Form1: TForm1
       end
       object ChartdanStringGrid11: TMenuItem
         Caption = 'Chart dan StringGrid 1'
+        OnClick = ChartdanStringGrid11Click
       end
       object ugasMandiri031: TMenuItem
         Caption = 'Tugas Mandiri 03'

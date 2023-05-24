@@ -23,6 +23,7 @@ type
     procedure PraktekMandiri11Click(Sender: TObject);
     procedure Latihan02Kondisional1Click(Sender: TObject);
     procedure ugasMandiri2Kondisional1Click(Sender: TObject);
+    procedure ChartdanStringGrid11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +36,8 @@ var
 implementation
 
 uses
-  latihan1, PM1, LATIHAN_02_KONDISIONAL_pas, TUGAS_MANDIRI_2_form;
+  latihan1, PM1, LATIHAN_02_KONDISIONAL_pas, TUGAS_MANDIRI_2_form, 
+  GRAFIK_STRINGGRID_MODUL1_form;
 
 {$R *.dfm}
 
@@ -57,6 +59,11 @@ end;
 procedure TForm1.ugasMandiri2Kondisional1Click(Sender: TObject);
 begin
 Tugas2.ShowModal;
+end;
+
+procedure TForm1.ChartdanStringGrid11Click(Sender: TObject);
+begin
+GrafikStringGrid.ShowModal;
 end;
 
 end.
