@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = 329
-  Top = 164
+object form_zeos: Tform_zeos
+  Left = 115
+  Top = 319
   Width = 827
   Height = 525
-  Caption = 'Form1'
+  Caption = 'form_zeos'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
