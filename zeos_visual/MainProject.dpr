@@ -2,12 +2,12 @@ program MainProject;
 
 uses
   Forms,
-  Main in 'Main.pas' {form_zeos};
+  Main in 'Main.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(Tform_zeos, form_zeos);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
