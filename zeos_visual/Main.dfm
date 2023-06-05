@@ -1,6 +1,6 @@
 object form_zeos: Tform_zeos
-  Left = 115
-  Top = 319
+  Left = 482
+  Top = 233
   Width = 827
   Height = 525
   Caption = 'form_zeos'
@@ -11,6 +11,7 @@ object form_zeos: Tform_zeos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
