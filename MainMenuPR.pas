@@ -89,7 +89,7 @@ end;
 
 procedure TForm1.Zeos1Click(Sender: TObject);
 begin
-TForm_zeos.Showmodal;
+zeos_form.ShowModal;
 end;
 
 end.

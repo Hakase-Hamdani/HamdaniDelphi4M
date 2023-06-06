@@ -8,7 +8,7 @@ uses
   ZDataset, ZAbstractConnection, ZConnection, StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  Tzeos_form = class(TForm)
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
@@ -40,13 +40,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  zeos_form: Tzeos_form;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure Tzeos_form.Button1Click(Sender: TObject);
 begin
 Edit1.Clear;
 Edit2.Clear;
@@ -55,7 +55,7 @@ Edit4.Clear;
 Edit5.Clear;
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure Tzeos_form.Button2Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
@@ -66,7 +66,7 @@ ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure Tzeos_form.Button3Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
@@ -77,7 +77,7 @@ ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
 end;
 
-procedure TForm1.Button4Click(Sender: TObject);
+procedure Tzeos_form.Button4Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('delete from kustomer where idkustomer= 3');
@@ -88,7 +88,7 @@ ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
 end;
 
-procedure TForm1.Button5Click(Sender: TObject);
+procedure Tzeos_form.Button5Click(Sender: TObject);
 begin
 Edit1.Clear;
 Edit2.Clear;

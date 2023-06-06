@@ -12,7 +12,7 @@ uses
   TUGAS_MANDIRI_04_form in 'TUGAS_MANDIRI_04\TUGAS_MANDIRI_04_form.pas' {Tugas4},
   Jadwal in 'Jadwal.pas' {FormJadwal},
   Ujadwal in 'Ujadwal.pas' {FormTambahData},
-  Main in 'zeos_visual\Main.pas' {form_zeos};
+  Main in 'zeos_visual\Main.pas' {zeos_form};
 
 {$R *.res}
 
@@ -28,5 +28,6 @@ begin
   Application.CreateForm(TTugas4, Tugas4);
   Application.CreateForm(TFormJadwal, FormJadwal);
   Application.CreateForm(TFormTambahData, FormTambahData);
+  Application.CreateForm(Tzeos_form, zeos_form);
   Application.Run;
 end.
