@@ -1,9 +1,9 @@
-object form_zeos: Tform_zeos
-  Left = 482
-  Top = 233
+object zeos_form: Tzeos_form
+  Left = 645
+  Top = 298
   Width = 827
   Height = 525
-  Caption = 'form_zeos'
+  Caption = 'zeos_form'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,6 @@ object form_zeos: Tform_zeos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

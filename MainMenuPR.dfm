@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 665
-  Top = 453
+  Left = 850
+  Top = 174
   Width = 467
   Height = 325
   Color = clBtnFace
@@ -53,6 +53,10 @@ object Form1: TForm1
         Caption = 'Modul 4 Final'
         OnClick = Modul4Final1Click
       end
+    end
+    object Zeos1: TMenuItem
+      Caption = 'Zeos'
+      OnClick = Zeos1Click
     end
   end
 end

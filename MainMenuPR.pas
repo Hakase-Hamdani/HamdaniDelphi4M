@@ -19,6 +19,7 @@ type
     ugasMandiri041: TMenuItem;
     Modul41: TMenuItem;
     Modul4Final1: TMenuItem;
+    Zeos1: TMenuItem;
     procedure Kalkulator1Click(Sender: TObject);
     procedure PraktekMandiri11Click(Sender: TObject);
     procedure Latihan02Kondisional1Click(Sender: TObject);
@@ -27,6 +28,7 @@ type
     procedure ugasMandiri031Click(Sender: TObject);
     procedure ugasMandiri041Click(Sender: TObject);
     procedure Modul4Final1Click(Sender: TObject);
+    procedure Zeos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +43,7 @@ implementation
 uses
   latihan1, PM1, LATIHAN_02_KONDISIONAL_pas, TUGAS_MANDIRI_2_form, 
   GRAFIK_STRINGGRID_MODUL1_form, TUGAS_MANDIRI_03_form, TUGAS_MANDIRI_04_form, 
-  Jadwal;
+  Jadwal, Main;
 
 {$R *.dfm}
 
@@ -83,6 +85,11 @@ end;
 procedure TForm1.Modul4Final1Click(Sender: TObject);
 begin
 FormJadwal.ShowModal;
+end;
+
+procedure TForm1.Zeos1Click(Sender: TObject);
+begin
+zeos_form.ShowModal;
 end;
 
 end.
