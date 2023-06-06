@@ -33,7 +33,6 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +58,7 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add(‘Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
+ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
 ZQuery1.ExecSQL;
 
 ZQuery1.SQL.Clear;
@@ -70,7 +69,7 @@ end;
 procedure TForm1.Button3Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add(‘Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
+ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
 ZQuery1. ExecSQL;
 
 ZQuery1.SQL.Clear;
@@ -90,15 +89,6 @@ ZQuery1.Open;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
-begin
-Edit1.Clear;
-Edit2.Clear;
-Edit3.Clear;
-Edit4.Clear;
-Edit5.Clear;
-end;
-
-procedure Tform_zeos.FormCreate(Sender: TObject);
 begin
 Edit1.Clear;
 Edit2.Clear;

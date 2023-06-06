@@ -11,7 +11,8 @@ uses
   TUGAS_MANDIRI_03_form in 'TUGAS_MANDIRI_03\TUGAS_MANDIRI_03_form.pas' {Tugas3},
   TUGAS_MANDIRI_04_form in 'TUGAS_MANDIRI_04\TUGAS_MANDIRI_04_form.pas' {Tugas4},
   Jadwal in 'Jadwal.pas' {FormJadwal},
-  Ujadwal in 'Ujadwal.pas' {FormTambahData};
+  Ujadwal in 'Ujadwal.pas' {FormTambahData},
+  Main in 'zeos_visual\Main.pas' {form_zeos};
 
 {$R *.res}
 
