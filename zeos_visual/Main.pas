@@ -33,6 +33,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -41,6 +42,7 @@ type
 
 var
   zeos_form: Tzeos_form;
+  id: string;
 
 implementation
 
@@ -58,33 +60,33 @@ end;
 procedure Tzeos_form.Button2Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
+ZQuery1.SQL.Add('insert into kostumer values(null,"'+Edit1.Text+'","'+Edit2.Text+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'")');
 ZQuery1.ExecSQL;
 
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('select * from kustomer');
+ZQuery1.SQL.Add('select * from kostumer');
 ZQuery1.Open;
 end;
 
 procedure Tzeos_form.Button3Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('Update customer set nama_customer =‘Rahman, S.KOM’ where id= 1');
+ZQuery1.SQL.Add('Update kostumer set nmkostumer ="'+edit1.Text+'", telp ="'+edit2.Text'", alamat="'edit3.Text'", kota="'edit4.Text where idkostumer= "'+id+'"');
 ZQuery1. ExecSQL;
 
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('select * from kustomer');
+ZQuery1.SQL.Add('select * from kostumer');
 ZQuery1.Open;
 end;
 
 procedure Tzeos_form.Button4Click(Sender: TObject);
 begin
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('delete from kustomer where idkustomer= 3');
+ZQuery1.SQL.Add('delete from kostumer where idkostumer= "'+id+'"');
 ZQuery1. ExecSQL;
 
 ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add('select * from kustomer');
+ZQuery1.SQL.Add('select * from kostumer');
 ZQuery1.Open;
 end;
 
@@ -95,6 +97,16 @@ Edit2.Clear;
 Edit3.Clear;
 Edit4.Clear;
 Edit5.Clear;
+end;
+
+procedure Tzeos_form.DBGrid1CellClick(Column: TColumn);
+begin
+id := ZQuery1.Fields[0].AsString;
+Edit1.Text:=ZQuery1.Fields[1].AsString;
+Edit2.Text:=ZQuery1.Fields[2].AsString;
+Edit3.Text:=ZQuery1.Fields[3].AsString;
+Edit4.Text:=ZQuery1.Fields[4].AsString;
+Edit5.Text:=ZQuery1.Fields[5].AsString;
 end;
 
 end.
